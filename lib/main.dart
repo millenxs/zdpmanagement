@@ -6,8 +6,14 @@ import 'features/segunda_pagina/segunda_tela.dart';
 import 'features/NotificacoesPage/notificacoes_page.dart';
 import 'package:contador_app/providers/theme_provider.dart';
 import 'package:contador_app/themes/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:contador_app/features/LoginPage/login_page.dart';
+import 'package:contador_app/features/RegisterPage/register_page.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     MultiProvider(
       providers: [
@@ -38,6 +44,8 @@ class MyApp extends StatelessWidget {
             '/primeira': (context) => const PrimeiraTela(),
             '/segunda': (context) => const SegundaTela(),
             '/notificacoes': (context) => const NotificacoesPage(),
+            '/login': (context) => const LoginPage(),
+            '/register': (context) => const RegisterPage(),
           },
         );
       },
