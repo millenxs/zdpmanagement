@@ -12,7 +12,7 @@ class PrimeiraTela extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/background_foto.jpeg',
+              'assets/images/background_1.jpg',
               fit: BoxFit.cover,
             ),
           ),
